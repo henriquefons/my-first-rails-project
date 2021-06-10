@@ -9,6 +9,22 @@
     data: { confirm: "Tem certeza?!" } 
   %>
 </p>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Adicionar comment:</h2>
+<%= render 'comments/form' %>
+
+<p>
+  <%= link_to "Editar", edit_article_path(@article) %> -
+  <%= link_to "Excluir", 
+    article_path(@article),
+    method: :delete,
+    data: { confirm: "Tem certeza?!" } 
+  %>
+</p>
 <a href="/">Voltar</a>
+
 
 
