@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ a {
+   text-decoration: none;
+   color: #0808e7;
+ }
+
+ .btn_link_new {
+  background-color: rgb(46, 37, 170);
+  color: #eeeef0;
+  padding: 10px 10px;
+  border-radius: 10px;
+ }
+
+ .btn_link_new:hover {
+    background-color: rgb(5, 3, 39);
+ }
+
+ .commemnts_body {
+   color: blueviolet;
+   font-weight: 300;
+ }
