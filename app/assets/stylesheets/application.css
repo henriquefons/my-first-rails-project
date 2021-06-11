@@ -14,6 +14,11 @@
  *= require_self
  */
 
+ body, a, h1, h2, h3, h4, h5, h6 {
+   padding: 0;
+   margin: 0;
+ }
+
  a {
    text-decoration: none;
    color: #0808e7;
@@ -22,9 +27,23 @@
  .btn_link_new {
   background-color: rgb(46, 37, 170);
   color: #eeeef0;
-  padding: 10px 10px;
+  padding:10px;
   border-radius: 10px;
  }
+
+ .btn_link_delete {
+  background-color: rgb(204, 19, 19);
+  color: #eeeef0;
+  padding:10px;
+  border-radius: 10px;
+ }
+ 
+ .title_header {
+   background-color: #313131;
+   color: #7c18ff;
+   width: 100%;
+   padding: 15px;
+  }
 
  .btn_link_new:hover {
     background-color: rgb(5, 3, 39);

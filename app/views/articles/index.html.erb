@@ -1,5 +1,6 @@
-<h1>Listar arquivos</h1>
-Our blog has <%= Article.public_count %> articles and counting!
+<h1 class="title_header">Listar arquivos</h1>
+<p>Our blog has <%= Article.public_count %> articles and counting!</p>
+<p>Our blog has <%= Comment.public_count %> comments and counting!</p>
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>

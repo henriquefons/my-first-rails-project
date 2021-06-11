@@ -1,13 +1,8 @@
-<h1><%= @article.title %></h1>
+<h1 class="title_header"><%= @article.title %></h1
+>
 
 <p>
-  <%= @article.body %> -
-  <%= link_to "Editar", edit_article_path(@article) %> -
-  <%= link_to "Excluir", 
-    article_path(@article),
-    method: :delete,
-    data: { confirm: "Tem certeza?!" } 
-  %>
+  <%= @article.body %> 
 </p>
 
 <h2>Comments</h2>
@@ -17,14 +12,16 @@
 <%= render 'comments/form' %>
 
 <p>
-  <%= link_to "Editar", edit_article_path(@article) %> -
+  <%= link_to "Editar", edit_article_path(@article), class: "btn_link_new" %> -
   <%= link_to "Excluir", 
     article_path(@article),
     method: :delete,
-    data: { confirm: "Tem certeza?!" } 
+    data: { confirm: "Tem certeza?!" },
+    class: "btn_link_delete"
   %>
 </p>
-<a href="/">Voltar</a>
+
+<a href="/">< Voltar</a>
 
 
 
