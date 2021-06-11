@@ -1,16 +1,17 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
+<%= simple_form_for [ @article, @article.comments.build ] do |form| %>
+  <p> 
+    <%= form.input :commenter, label: 'Nome: ',
+    error: 'Por favor, verifique o texto' %> 
   </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+  <p> 
+    <%= form.input :body, label: 'Comentario: ',
+    error: 'Por favor, verifique o texto' %> 
   </p>
 
   <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    <%= form.input :status, as: :select, 
+    collection:['public', 'private', 'archived'], 
+    selected: 'public' %>
   </p>
 
   <p>

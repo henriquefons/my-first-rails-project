@@ -1,24 +1,30 @@
-<%= form_with model: article do |form| %>
+<%= simple_form_for article do |form| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.input :title, label: 'Titulo',
+     error: 'Por favor, adicione um titulo' %><br>
+  </div>
+
+
+  <div>
+    <%= form.input :body, label: 'Texto',
+    error: 'Por favor, verifique o texto' %><br>
+  </div> 
+  
+  <% article.errors.full_messages_for(:body).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.input :status, as: :select, 
+    collection:['public', 'private', 'archived'], 
+    selected: 'public' %>
+  </div>  
+
+  <div>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </div>  
 
   <div>
     <%= form.submit %>
