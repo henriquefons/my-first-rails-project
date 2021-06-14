@@ -37,12 +37,21 @@
   padding:10px;
   border-radius: 10px;
  }
+
+ .btn_link_add {
+  background-color: rgb(19, 83, 19);
+  color: #eeeef0;
+  padding:10px;
+  border-radius: 10px;
+ }
  
  .title_header {
-   background-color: #313131;
-   color: #7c18ff;
-   width: 100%;
-   padding: 15px;
+  background-color: #313131;
+  color: #7c18ff;
+  width: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
   }
 
  .btn_link_new:hover {

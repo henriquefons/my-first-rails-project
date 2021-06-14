@@ -1,4 +1,13 @@
-<h1 class="title_header">Listar arquivos</h1>
+<div class="title_header">
+<h1>Listar arquivos</h1>
+<% if user_signed_in? %>
+  <%= link_to "Editar usuario", edit_user_registration_path,
+  class: "btn_link_add" %>
+  <%= link_to "Deslogar", destroy_user_session_path, method: :delete,
+  class: "btn_link_delete" %>
+<% end %>
+</div>
+
 <p>Our blog has <%= Article.public_count %> articles and counting!</p>
 <p>Our blog has <%= Comment.public_count %> comments and counting!</p>
 <ul>
@@ -11,4 +20,6 @@
   <% end %>
 </ul>
 
-<%= link_to "Novo Article", new_article_path,  class: "btn_link_new" %>
+<%= link_to "Novo Article", new_article_path, class: "btn_link_new" %>
+
+ 
