@@ -1,24 +1,27 @@
-<%= simple_form_for article do |form| %>
- 
-  <%= form.input :title, label: 'Titulo',
-    error: 'Por favor, adicione um titulo' %><br>
+<div class="container">
+  <%= simple_form_for article do |form| %>
+  
+    <%= form.input :title, label: 'Titulo',
+      error: 'Por favor, adicione um titulo' %><br>
 
-  <%= form.input :body, label: 'Texto',
-  error: 'Por favor, verifique o texto',
-  hint: 'Escreva uma msg acima de 10 caracteres' %><br>
+    <%= form.input :body, label: 'Texto',
+    error: 'Por favor, verifique o texto',
+    hint: 'Escreva uma msg acima de 10 caracteres' %><br>
 
-  <% article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.input :status, as: :select, 
+    collection:['public', 'private', 'archived'], 
+    selected: 'public' %> <br>
+
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.submit %>
+
   <% end %>
-
-  <%= form.input :status, as: :select, 
-  collection:['public', 'private', 'archived'], 
-  selected: 'public' %> <br>
-
-  <% article.errors.full_messages_for(:title).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
-
-  <%= form.submit %>
-
-<% end %>
+  <%= link_to "< Back", :back, class: "btn btn-outline-info mt-3" %>
+<div>

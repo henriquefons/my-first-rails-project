@@ -1,20 +1,22 @@
-<%= simple_form_for [ @article, @article.comments.build ] do |form| %>
-  <p> 
-    <%= form.input :commenter, label: 'Nome: ',
-    error: 'Por favor, verifique o texto' %> 
-  </p>
-  <p> 
-    <%= form.input :body, label: 'Comentario: ',
-    error: 'Por favor, verifique o texto' %> 
-  </p>
+<%= simple_form_for [@article, @article.comments.build] do |form| %>
+    <div class="row">
+    <%= form.input :commenter, label: "Nome: ",
+                               error: "Por favor, verifique o texto",
+                               wrapper_html: { class: "col-md-4" },
+                               input_html: { class: "" } %> 
 
-  <p>
-    <%= form.input :status, as: :select, 
-    collection:['public', 'private', 'archived'], 
-    selected: 'public' %>
-  </p>
+    <%= form.input :body, label: "Comentario: ",
+                          error: "Por favor, verifique o texto",
+                          wrapper_html: { class: "col-md-4" },
+                          input_html: { class: "" } %> 
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.input :status, as: :select,
+                            collection: ["public", "private", "archived"],
+                            selected: "public",
+                            wrapper_html: { class: "col-md-4" },
+                            input_html: { class: "" } %>
+
+    </div>
+    
+    <%= form.submit "Adicionar comentario" %>
 <% end %>

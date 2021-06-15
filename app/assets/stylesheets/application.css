@@ -47,8 +47,8 @@
  }
  
  .title_header {
-  background-color: #313131;
-  color: #7c18ff;
+  background-color: #0c0808;
+  color: rgba(221, 0, 0, 0.74);
   width: auto;
   padding: 15px;
   display: flex;
