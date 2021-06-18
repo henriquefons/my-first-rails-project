@@ -15,6 +15,10 @@
     <%= form.input :status, as: :select, 
     collection:['public', 'private', 'archived'], 
     selected: 'public' %> <br>
+    
+    <%= form.input :status, as: :select, 
+    collection:['public', 'private', 'archived'], 
+    selected: 'public' %> <br>
 
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
