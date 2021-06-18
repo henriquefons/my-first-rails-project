@@ -1,5 +1,5 @@
 <div class="title_header">
-<h1 class="title_header"><%= @article.title %></h1>
+<h1><%= @article.title %></h1>
 <div class="d-flex align-items-center"> 
   <%= link_to "Editar artigo", edit_article_path(@article), class: "btn btn-info mx-3" %>  
   <%= link_to "Excluir artigo",
@@ -11,8 +11,8 @@
 </div>
 
 <div class="container pt-3">
-<p class="lead">
-  <%= @article.body %> 
+  <p class="lead">
+    <%= @article.body %> 
 </p>
 
 <h5 class="my-2">Comentarios</h5>

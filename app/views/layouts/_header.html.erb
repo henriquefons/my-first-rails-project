@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <div class="title_header">
+    <h1><%= yield(:title_header) or "Page Title" %></h1>
+    <div id="content" class="d-flex align-items-center">
+      <%= yield(:content)  %>
+    </div>  
+  </div>
+  <% end %>

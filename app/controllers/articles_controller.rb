@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
 
   def index
     @articles = Article.all
@@ -47,8 +46,8 @@ class ArticlesController < ApplicationController
 
   # define quais valores aceitao para a criação
   private
-    def article_params
-      params.require(:article).permit(:title, :body, :status)
-    end
 
+  def article_params
+    params.require(:article).permit(:title, :body, :status)
+  end
 end
