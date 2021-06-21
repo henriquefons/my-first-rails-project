@@ -1,3 +1,5 @@
-<h1 class="title_header">Editar Article</h1>
+<% content_for :title_header do %>
+  Editar arquivo 
+<% end %>
 
 <%= render "form", article: @article %>

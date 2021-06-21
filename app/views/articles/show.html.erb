@@ -1,14 +1,15 @@
-<div class="title_header">
-<h1><%= @article.title %></h1>
-<div class="d-flex align-items-center"> 
+ <% content_for :content do %>
   <%= link_to "Editar artigo", edit_article_path(@article), class: "btn btn-info mx-3" %>  
   <%= link_to "Excluir artigo",
               article_path(@article),
               method: :delete,
               data: { confirm: "Tem certeza?!" },
               class: "btn btn-danger" %>
-</div>
-</div>
+<% end %>
+
+<% content_for :title_header do %>
+  <%= @article.title %>
+<% end %>
 
 <div class="container pt-3">
   <p class="lead">

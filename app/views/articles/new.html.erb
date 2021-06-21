@@ -1,2 +1,4 @@
-<h1 class="title_header">Novo artigo - Yeah!</h1>
+<% content_for :title_header do %>
+  Novo artigo 
+<% end %>
 <%= render "form", article: @article %>

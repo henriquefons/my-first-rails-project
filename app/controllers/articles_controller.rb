@@ -1,6 +1,4 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @articles = Article.all
   end
@@ -14,6 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @article = Article.new(article_params)
 
     if @article.save
@@ -29,7 +28,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -48,6 +46,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :status)
+    params.require(:article).permit(:title, :body, :status, :user_id)
   end
 end

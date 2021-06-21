@@ -16,9 +16,10 @@
     collection:['public', 'private', 'archived'], 
     selected: 'public' %> <br>
     
-    <%= form.input :status, as: :select, 
-    collection:['public', 'private', 'archived'], 
-    selected: 'public' %> <br>
+    <%= form.input :user_id, as: :select, 
+    collection: User.all, 
+    label_method: :email,
+    selected: User.first %> <br>
 
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
