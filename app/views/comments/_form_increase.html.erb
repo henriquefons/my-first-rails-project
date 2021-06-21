@@ -1,0 +1,20 @@
+<div class="row">
+  <%= form.input :commenter, label: "Nome: ",
+                              error: "Por favor, verifique o texto",
+                              wrapper_html: { class: "col-md-4" },
+                              input_html: { class: "" } %> 
+
+  <%= form.input :body, label: "Comentario: ",
+                        error: "Por favor, verifique o texto",
+                        wrapper_html: { class: "col-md-4" },
+                        input_html: { class: "" } %> 
+
+  <%= form.input :status, as: :select,
+                          collection: ["public", "private", "archived"],
+                          selected: "public",
+                          wrapper_html: { class: "col-md-4" },
+                          input_html: { class: "" } %>
+                        
+  <%= link_to_remove_association "Remover comentario", form %>
+
+</div>

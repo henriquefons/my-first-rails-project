@@ -21,6 +21,15 @@
     label_method: :email,
     selected: User.first %> <br>
 
+    <h5 class="my-2">Comentarios</h5>
+    <%= form.simple_fields_for :comments do |comment_form| %>
+      <%= render "comments/form_increase", form: comment_form %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add ingredient', form, :comment_form %>
+    </div>
+    
+
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
