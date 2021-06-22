@@ -23,10 +23,10 @@
 
     <h5 class="my-2">Comentarios</h5>
     <%= form.simple_fields_for :comments do |comment_form| %>
-      <%= render "comments/form_increase", form: comment_form %>
+      <%= render "comment_fields", f: comment_form %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'add ingredient', form, :comment_form %>
+      <%= link_to_add_association 'Adicionar comentário', form, :comments %>
     </div>
     
 
