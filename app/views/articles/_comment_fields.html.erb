@@ -1,23 +1,17 @@
 <div class="row nested-fields">
-  <div class="field col-md-4"> 
     <%= f.input :commenter, label: "Nome: ",
                                error: "Por favor, verifique o texto",
-                               wrapper_html: { class: "col-md-4" },
+                               wrapper_html: { class: "field col-md-4" },
                                input_html: { class: "" } %> 
-  </div>
-  <div class="field col-md-4"> 
     <%= f.input :body, label: "Comentario: ",
                           error: "Por favor, verifique o texto",
-                          wrapper_html: { class: "col-md-4" },
+                          wrapper_html: { class: "field col-md-4" },
                           input_html: { class: "" } %> 
-  </div>
-  <div class="field col-md-4"> 
     <%= f.input :status, as: :select,
                             collection: ["public", "private", "archived"],
                             selected: "public",
-                            wrapper_html: { class: "col-md-4" },
+                            wrapper_html: { class: "field col-md-4" },
                             input_html: { class: "" } %>
-  </div>
                         
   <%= link_to_remove_association "Remover comentario", f %>
 

@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   include Visible
-  belongs_to :user, dependent: :destroy
+  belongs_to :user 
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :comments, :allow_destroy => true
 

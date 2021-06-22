@@ -22,13 +22,12 @@
     selected: User.first %> <br>
 
     <h5 class="my-2">Comentarios</h5>
-    <%= form.simple_fields_for :comments do |comment_form| %>
-      <%= render "comment_fields", f: comment_form %>
+    <%= form.simple_fields_for :comments do |comment| %>
+      <%= render "comment_fields", f: comment %>
     <% end %>
     <div class='links'>
       <%= link_to_add_association 'Adicionar comentário', form, :comments %>
     </div>
-    
 
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
