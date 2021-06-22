@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @article.comments.build
+    # @article.comments.build #ative se quer comecar com um comentario já redenrizado
   end
 
   def create
@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :status, :user_id, comments_attributes: [:commenter, :body, :status])
+    params.require(:article).permit(:title, :body, :status, :user_id, comments_attributes: [:commenter, :body, :status, :_destroy, :id])
   end
 end
